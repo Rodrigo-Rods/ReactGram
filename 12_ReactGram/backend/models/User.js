@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose; // Schema é um método do mongoose que cria um novo esquema
 
-const userSchema = new Schema( // Esquema do usuário
+const userSchema = new Schema( // Esquema que define a estrutura do usuário no banco de dados
     {
         name: String,
         email: String,
