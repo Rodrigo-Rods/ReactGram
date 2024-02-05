@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express();
 
+router.use("/api/users", require("./UserRouters"));
 
 // Rota de teste
 router.get('/', (req, res) => {
