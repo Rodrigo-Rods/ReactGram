@@ -11,6 +11,16 @@ const app = express();
 app.use(express.json()); // Permite que o express entenda JSON
 app.use(express.urlencoded({ extended: false })); // Permite que o express entenda Form Data
 
+// Configuração do CORS
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+
+//Diretório de upload de imagens
+app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
+
+// Conecção com Banco de Dados
+require("./config/db.js");
+
+
 // Routes
 const router = require('./routes/Router'); // Importa o router
 
