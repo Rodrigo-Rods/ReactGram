@@ -4,7 +4,7 @@ const router = express();
 
 // Rota de teste
 router.get('/', (req, res) => {
-    res.send('Essa API está rodando...');
+    res.send('API rodando...');
 });
 
 
