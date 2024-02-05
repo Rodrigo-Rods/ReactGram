@@ -17,6 +17,6 @@ const conn = async () => {
     }
 }
 
-conn() // Chama a função de conexão com o banco de dados
+conn() // Chama a conexão com o banco de dados
 
 module.exports = conn // Exporta a conexão com o banco de dados para ser utilizada em outros arquivos

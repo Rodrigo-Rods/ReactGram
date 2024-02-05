@@ -27,5 +27,5 @@ const router = require('./routes/Router'); // Importa o router
 app.use(router);
 
 app.listen(port, () => { // Inicia o servidor na porta 5000 e exibe a mensagem no console. 
-    console.log(`App rodando na porta: ${port}`);
+    console.log(`App sendo executado na porta: ${port}`);
 })
