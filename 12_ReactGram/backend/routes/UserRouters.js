@@ -4,7 +4,11 @@ const router = express.Router();
 // Controllers
 const { register } = require('../controllers/UserController');
 
+// Middlewares
+const validate = require('../middlewares/handleValidation');
+
+
 // Rotas
-router.post('/register', register);
+router.post('/register', validate, register);
 
 module.exports = router; 
