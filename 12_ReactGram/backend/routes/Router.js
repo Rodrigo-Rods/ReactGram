@@ -8,8 +8,4 @@ router.get('/', (req, res) => {
     res.send('API rodando...');
 });
 
-
-
-
-
 module.exports = router; // Exporta o router para ser utilizado em outros arquivos
