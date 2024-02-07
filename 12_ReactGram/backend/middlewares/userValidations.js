@@ -27,7 +27,6 @@ const userCreateValidation = () => {
                 }
                 return true;
             }),
-
     ];
 };
 
@@ -45,7 +44,22 @@ const loginValidation = () => {
     ];
 };
 
+// Validação de atualização de usuário
+const userUpdateValidation = () => {
+    return [
+        body("name")
+            .optional()
+            .isLength({ min: 3 })
+            .isString()
+            .withMessage("O nome de usuário deve ter no mínimo 3 caracteres."),
+        body("password")
+            .optional()
+            .isLength({ min: 6 })
+            .withMessage("A senha deve ter no mínimo 6 caracteres."),
+    ];
+};
 module.exports = {
     userCreateValidation,
-    loginValidation
+    loginValidation,
+    userUpdateValidation,
 };
