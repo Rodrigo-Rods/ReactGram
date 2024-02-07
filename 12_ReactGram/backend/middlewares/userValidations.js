@@ -58,6 +58,7 @@ const userUpdateValidation = () => {
             .withMessage("A senha deve ter no mínimo 6 caracteres."),
     ];
 };
+
 module.exports = {
     userCreateValidation,
     loginValidation,
