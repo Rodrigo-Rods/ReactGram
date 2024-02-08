@@ -28,13 +28,21 @@ const photoUpdateValidation = () => {
             .withMessage("O titulo da foto é obrigatório.")
             .isLength({ min: 3, max: 50 })
             .withMessage("O titulo da foto deve ter entre 3 e 50 caracteres."),
+    ];
+};
 
-
-    ]
-
+const commentValidation = () => {
+    return [
+        body("comment")
+            .isString()
+            .withMessage("O comentário é obrigatório.")
+            .isLength({ min: 3, max: 300 })
+            .withMessage("O comentário deve ter entre 3 e 300 caracteres."),
+    ];
 }
 
 module.exports = {
     photoInsertValidation,
     photoUpdateValidation,
+    commentValidation,
 }
