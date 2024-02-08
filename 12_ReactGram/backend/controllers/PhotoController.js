@@ -61,7 +61,7 @@ const deletePhoto = async (req, res) => {
     } catch (error) {
         res
             .status(404)
-            .json({ errors: ["Não foi possivel deletar a foto pois a mesma não foi encontrada"] });
+            .json({ errors: ["Não foi possivel deletar pois a foto não foi encontrada"] });
         return;
     };
 };
@@ -71,11 +71,26 @@ const getAllPhotos = async (req, res) => {
     const photos = await Photo.find({}).sort([["createdAt", -1]]).exec()
 
     return res.status(200).json(photos);
+};
+
+// Pegar as fotos de um usuário
+const getUserPhotos = async (req, res) => {
+
+    const { id } = req.params;
+
+    const photos = await Photo.find({ userId: id })
+        .sort([["createdAt", -1]])
+        .exec();
+
+    return res.status(200).json(photos);
+
+
 }
 
-
+// Exportar os métodos
 module.exports = {
     insertPhoto,
     deletePhoto,
     getAllPhotos,
+    getUserPhotos,
 }
