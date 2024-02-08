@@ -132,6 +132,7 @@ const getUserById = async (req, res) => {
         const user = await User.findById(new mongoose.Types.ObjectId(id)).select(
             "-password"
         );
+        // const user = await User.findById(reqUser._id).select("-password"); // <--- Não funcionou 
 
         // Checar se o usuário foi encontrado
         if (!user) {
