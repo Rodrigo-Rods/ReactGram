@@ -15,10 +15,26 @@ const photoInsertValidation = () => {
                 throw new Error("A imagem é obrigatória.")
             }
             return true;
-        })
+        }),
+    ];
+};
+
+const photoUpdateValidation = () => {
+
+    return [
+        body("title")
+            .optional()
+            .isString()
+            .withMessage("O titulo da foto é obrigatório.")
+            .isLength({ min: 3, max: 50 })
+            .withMessage("O titulo da foto deve ter entre 3 e 50 caracteres."),
+
+
     ]
+
 }
 
 module.exports = {
     photoInsertValidation,
+    photoUpdateValidation,
 }

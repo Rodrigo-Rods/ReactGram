@@ -19,7 +19,7 @@ const {
 } = require('../middlewares/userValidations');
 const authGuard = require('../middlewares/authGuard');
 const { imageUpload } = require('../middlewares/imageUpload');
-
+const { getPhotoById } = require('../controllers/PhotoController');
 
 // Rotas
 router.post('/register', userCreateValidation(), validate, register);
@@ -33,7 +33,6 @@ router.put("/",
     update);
 
 router.get("/:id", getUserById);
-
-
+router.get("/:id", authGuard, getPhotoById)
 
 module.exports = router; 

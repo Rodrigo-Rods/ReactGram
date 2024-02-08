@@ -83,8 +83,56 @@ const getUserPhotos = async (req, res) => {
         .exec();
 
     return res.status(200).json(photos);
+};
 
+// Pegar uma foto pelo id
+const getPhotoById = async (req, res) => {
+    const { id } = req.params;
 
+    const photo = await Photo.findById(new mongoose.Types.ObjectId(id));
+
+    // Verificar se a foto existe
+    if (!photo) {
+        res.status(404).json({
+            errors: ["Foto não encontrada"]
+        });
+        return;
+    }
+
+    res.status(200).json(photo);
+};
+
+// Update de uma foto
+const updatePhoto = async (req, res) => {
+
+    const { id } = req.params;
+
+    const { title } = req.body;
+
+    const reqUser = req.user;
+
+    const photo = await Photo.findById(id);
+
+    // Checar se a foto existe
+    if (!photo) {
+        res.status(404).json({
+            errors: ["Foto não encontrada"]
+        });
+        return;
+    }
+
+    //Checar se o usuário é o dono da foto
+    if (!photo.userId.equals(reqUser._id)) {
+        res.status(422).json({
+            errors: ["Você não tem permissão para editar essa foto"]
+        });
+        return;
+    }
+    if (title) {
+        photo.title = title;
+    }
+    await photo.save();
+    res.status(200).json({ photo, message: "Foto atualizada com sucesso" });
 }
 
 // Exportar os métodos
@@ -93,4 +141,6 @@ module.exports = {
     deletePhoto,
     getAllPhotos,
     getUserPhotos,
+    getPhotoById,
+    updatePhoto,
 }
