@@ -12,7 +12,7 @@ import {
 const Navbar = () => {
     return <nav id="nav">
         <Link to="/">ReactGram</Link>
-        <form>
+        <form id="search-form">
             <BsSearch />
             <input type="text" placeholder='Pesquisar' />
         </form>
