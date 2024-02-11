@@ -14,7 +14,8 @@
 
 #search-form svg{
     position: absolute;
-    top: 10px;
+    font-size: .9em;
+    top: 2px;
     left: 9px;
 }
 
@@ -42,3 +43,4 @@ margin: 0;
 #nav-links svg{
     font-size: 1.5em;
 }
+

@@ -23,7 +23,6 @@ const Register = () => {
                 <input type="submit" value="Cadastrar" />
             </form>
             <p>Ja tem conta? <Link to="/login">Clique aqui</Link></p>
-
         </div>
     );
 };

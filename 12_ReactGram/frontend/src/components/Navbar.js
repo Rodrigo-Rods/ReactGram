@@ -33,7 +33,6 @@ const Navbar = () => {
                 </NavLink>
             </li>
         </ul>
-
     </nav>
 }
 
