@@ -42,8 +42,8 @@ label span {
 }
 
 input {
-  background-color: #ffffff76;
-  color: #AAA;
+  background-color: #ffffffa1;
+  color: #3a3a3a;
   border: 1px solid #555;
   border-radius: 2px;
   padding: 10px, 8px;
@@ -58,8 +58,8 @@ color: #3a3a3a;
 .btn,
 button,
 input[type="submit"] {
-  background-color: #0094f6;
-  color: #AAA;
+  background-color: var(--color10);
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   padding: 10px 8px;

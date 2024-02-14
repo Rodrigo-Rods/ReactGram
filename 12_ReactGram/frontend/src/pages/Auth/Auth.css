@@ -1,10 +1,12 @@
 #login,
 #register {
     border: 1px solid #363636;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(1, 10, 0, 0.75);
     padding: 1.5em 2em;
     max-width: 33%;
     margin: 2em auto;
+    box-shadow: 2px 2px 4px 1px #00000075;
+    border-radius: 5px;
 }
 
 #login h2,

@@ -13,7 +13,7 @@ const Navbar = () => {
     return <nav id="nav">
         <Link to="/">ForestGram</Link>
         <form id="search-form">
-            <BsSearch />
+            <BsSearch style={{ color: '3a3a3a' }} />
             <input type="text" placeholder='Pesquisar' />
         </form>
         <ul id="nav-links">
