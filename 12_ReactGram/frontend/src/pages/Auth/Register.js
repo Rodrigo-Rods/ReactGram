@@ -21,7 +21,12 @@ const Register = () => {
             password,
             confirmPassword
         }
+
+        // Console
         console.log(user)
+
+        console.log("Name:", name);
+        console.log("Email:", email);
     }
 
     return (
