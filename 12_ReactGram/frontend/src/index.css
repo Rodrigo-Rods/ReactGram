@@ -3,7 +3,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #121212;
+  /**/
+  background-image: linear-gradient(to right top, #462b00, #604d20, #7a7040, #939565, #adbc8d, #acc090, #aac493, #a8c897, #8aaa74, #6d8d52, #527030, #37550d);
+  /**/
   color: #fafafa;
 }
 
@@ -40,7 +42,7 @@ label span {
 }
 
 input {
-  background-color: #3b3b3b;
+  background-color: #ffffff76;
   color: #AAA;
   border: 1px solid #555;
   border-radius: 2px;
@@ -50,7 +52,7 @@ input {
 }
 
 input::placeholder{
-color: #AAA;
+color: #3a3a3a;
 }
 
 .btn,

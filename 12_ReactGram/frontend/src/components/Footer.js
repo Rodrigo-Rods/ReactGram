@@ -2,8 +2,7 @@ import './Footer.css';
 
 const Footer = () => {
     return <footer id="footer">
-        <p>ReactGram &copy; {new Date().getFullYear()}</p>
-        <p>ReactGram &copy; {new Date().getDate()}</p>
+        <p>ForestGram &copy; {new Date().getFullYear()}</p>
     </footer>
 }
 

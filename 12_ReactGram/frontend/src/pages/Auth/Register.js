@@ -31,7 +31,7 @@ const Register = () => {
 
     return (
         <div id="register">
-            <h2>ReactGram</h2>
+            <h2>ForestGram</h2>
             <p className="subtitle">Cadastre-se para ver as fotos de seus amigos</p>
             <form onSubmit={handleSubmit}>
                 <input

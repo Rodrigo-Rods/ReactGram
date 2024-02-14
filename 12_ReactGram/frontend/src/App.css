@@ -1,3 +1,18 @@
+:root {
+    --color1: rgba(70, 43, 0, 1);
+    --color2: rgba(96, 77, 32, 1);
+    --color3: rgba(122, 112, 64, 1);
+    --color4: rgba(147, 149, 101, 1);
+    --color5: rgba(173, 188, 141, 1);
+    --color6: rgba(172, 192, 144, 1);
+    --color7: rgba(170, 196, 147, 1);
+    --color8: rgba(168, 200, 151, 1);
+    --color9: rgba(138, 170, 116, 1);
+    --color10: rgba(109, 141, 82, 1);
+    --color11: rgba(82, 112, 48, 1);
+    --color12: rgba(55, 85, 13, 1);
+}
+
 .container {
     min-height: 80vh;
 }
