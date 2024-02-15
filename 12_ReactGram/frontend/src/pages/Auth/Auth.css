@@ -26,7 +26,7 @@
 #register form {
     padding-bottom: 1.5em;
     margin-bottom: 1.5em;
-    border-bottom: 1px solid #363636;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25)
 }
 
 #login p,
