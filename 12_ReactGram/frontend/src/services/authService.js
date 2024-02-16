@@ -3,7 +3,6 @@ import { api, requestConfig } from "../utils/config";
 // Registrar um usuário
 const register = async (data) => {
     const config = requestConfig("POST", data);
-
     try {
         //const res= await fetch(`${api}/auth/register`, config);
 
@@ -18,7 +17,6 @@ const register = async (data) => {
         console.log(error);
     }
 }
-
 const authService = {
     register,
 }
