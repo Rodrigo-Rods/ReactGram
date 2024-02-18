@@ -7,7 +7,6 @@ import App from './App';
 import { Provider } from 'react-redux'; // Provider serve para fornecer o store para todos os componentes
 import { store } from './store';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

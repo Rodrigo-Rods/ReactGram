@@ -13,6 +13,8 @@
     --color12: rgba(55, 85, 13, 1);
     /*Outras*/
     --color01: rgba(1, 10, 0, 0.75);
+    --color02: rgba(1, 10, 0, 0.5);
+    --color03: rgba(1, 10, 0, 0.25);   
 }
 
 .container {
