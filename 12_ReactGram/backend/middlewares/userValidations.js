@@ -16,11 +16,11 @@ const userCreateValidation = () => {
             .withMessage("A senha é obrigatória.")
             .isLength({ min: 6 })
             .withMessage("A senha deve ter no mínimo 6 caracteres."),
-        body("confirmpassword")
+        body("confirmPassword")
             .isString()
             .withMessage("A confirmação de senha é obrigatória.")
             .isLength({ min: 6 })
-            .withMessage("A confirmação de senha deve ter no mínimo 6 caracteres.")
+            .withMessage("Não esqueça de confirmar a senha.")
             .custom((value, { req }) => { // Customizada pois não existe nativamente para comparar campos.
                 if (value != req.body.password) {
                     throw new Error("As senhas devem ser iguais."); // Custom é disparada dessa forma.
