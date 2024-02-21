@@ -14,11 +14,19 @@ const register = async (data) => {
         }
         return res;
     } catch (error) {
-        console.log('Caught error:', error); // Log any caught errors
+        console.log(error);
     }
 };
-const authService = {
-    register,
+
+// Logout do usuário
+const logout = () => {
+    localStorage.removeItem("user");
 }
 
-export default authService;;
+
+const authService = {
+    register,
+    logout
+}
+
+export default authService;
