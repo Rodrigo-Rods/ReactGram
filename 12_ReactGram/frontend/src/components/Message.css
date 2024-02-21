@@ -1,11 +1,12 @@
 .message {
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 1 10px;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid #000;
+    font-size: 0.75rem;
 }
 
 .message.error {

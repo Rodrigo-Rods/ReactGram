@@ -30,11 +30,21 @@ margin: 0;
 
 #nav-links{
     display: flex;
-    align-items: center;
+    align-items: center;   
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-#nav-link li{
+#nav-links li{
     margin-right: 1em;
+}
+
+#nav-links ul{
+    display: flex;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #nav-links span {

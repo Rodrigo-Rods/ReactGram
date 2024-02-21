@@ -73,7 +73,7 @@ const login = async (req, res) => {
         return;
     }
     // Retornar usuário e token
-    res.status(200).json({
+    res.status(201).json({
         _id: user._id,
         profileImage: user.profileImage,
         token: generateToken(user._id),
