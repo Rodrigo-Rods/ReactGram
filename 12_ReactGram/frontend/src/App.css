@@ -20,3 +20,13 @@
 .container {
     min-height: 80vh;
 }
+
+.loading-page {
+    text-align: center; /* Centraliza o texto horizontalmente */
+    font-size:400%; /* Tamanho da fonte */
+    font-weight: bolder;
+ position: absolute; /* Posiciona o elemento absolutamente */
+ top: 30%; /* Posiciona o topo do elemento no meio da tela */
+ left: 50%; /* Posiciona a esquerda do elemento no meio da tela */
+ transform: translate(-50%, -50%); /* Ajusta o posicionamento para centralizar perfeitamente */
+}

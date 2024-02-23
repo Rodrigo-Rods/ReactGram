@@ -16,13 +16,15 @@ import Home from './pages/Home/Home';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import EditProfile from './pages/EditProfile/EditProfile';
+import Profile from './pages/Profile/Profile';
 
 function App() {
   const { auth, loading } = useAuth()
 
+
   if (loading) {
     console.log("Loading:", loading)
-    return <div>Carregando...</div>
+    return <p className='loading-page'>Carregando...</p>
   }
 
   return (
@@ -37,8 +39,15 @@ function App() {
             <Route
               path="/profile"
               element={auth ? <EditProfile /> : <Navigate to="/login" />} />
-            <Route path="/login" element={!auth ? <Login /> : <Navigate to="/" />} />
-            <Route path="/register" element={!auth ? <Register /> : <Navigate to="/" />} />
+            <Route
+              path="/users/:id"
+              element={auth ? <Profile /> : <Navigate to="/login" />} />
+            <Route
+              path="/login"
+              element={!auth ? <Login /> : <Navigate to="/" />} />
+            <Route
+              path="/register"
+              element={!auth ? <Register /> : <Navigate to="/" />} />
           </Routes>
         </div>
         <Footer />
