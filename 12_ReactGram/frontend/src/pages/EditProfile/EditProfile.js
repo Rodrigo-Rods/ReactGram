@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 //Redux
 import { profile, resetMessage } from '../../slices/userSlice';
+import { updateProfile } from '../../slices/userSlice';
 
 //Componentes
 import Message from '../../components/Message';
@@ -39,9 +40,35 @@ const EditProfile = () => {
 
     // console.log("User:", user)
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        //Coletar dados de usuário do states
+        const userData = {
+            name,
+        }
+        if (profileImage) {
+            userData.profileImage = profileImage
+        }
+        if (bio) {
+            userData.bio = bio
+        }
+        if (password) {
+            userData.password = password
+        }
+
+        //Montar dados do form
+        const userFormData = Object.keys(userData)
+            .reduce((formData, key) => {
+                formData.append(key, userData[key]);
+                return formData;
+            }, new FormData());
+        await dispatch(updateProfile(userFormData));
+
+        setTimeout(() => {
+            dispatch(resetMessage());
+        }, 2000);
+    };
 
     const handleFile = (e) => {
         // Preview
@@ -83,7 +110,10 @@ const EditProfile = () => {
                 <span>Quer alterar sua senha?</span>
                 <input type="password" placeholder='Digite sua nova senha' onChange={(e) => setPassword(e.target.value)} value={password || ''} />
             </label>
-            <input type="submit" value="Atualizar" />
+            {!loading && <input type="submit" value="Atualizar" />}
+            {loading && <input type="submit" value="Carregando..." disabled />}
+            {error && <Message type="error" msg={error} />}
+            {message && <Message type="success" msg={message} />}
         </form>
     </div>
 }
