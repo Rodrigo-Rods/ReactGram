@@ -55,3 +55,9 @@ margin: 0;
     font-size: 1.5em;
 }
 
+#nav-logo {
+    height: 35px;
+    width: 35px;
+    border-radius: 5px;
+    margin-right: .5em;
+}

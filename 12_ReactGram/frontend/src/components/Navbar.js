@@ -38,7 +38,10 @@ const Navbar = () => {
     }
 
     return <nav id="nav">
-        <Link to="/">ForestGram</Link>
+        <div id="nav-links">
+            <img src="/favicon.jpeg" id='nav-logo' />
+            <Link to="/"> ForestGram</Link>
+        </div>
         <form id="search-form">
             <BsSearch style={{ color: '3a3a3a' }} />
             <input type="text" placeholder='Pesquisar' />
