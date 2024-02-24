@@ -19,14 +19,22 @@ const Profile = () => {
     const { id } = useParams()
     const dispatch = useDispatch()
     const { user, loading } = useSelector((state) => state.user)
-    const { user: authUser } = useSelector((state) => state.auth)
+    const { user: userAuth } = useSelector((state) => state.auth)
 
-    //Photo
+    //Form e form refs
+    const newPhotoForm = useRef()
+    const editPhotoForm = useRef()
+
+
 
     //Carregar dados usuário
     useEffect(() => {
         dispatch(getUserDetails(id))
     }, [dispatch, id]);
+
+    const submitHandle = (e) => {
+        e.preventDefault();
+    }
 
     if (loading) {
         return <p className='loading-page'>Carregando...</p>
@@ -42,6 +50,25 @@ const Profile = () => {
                 <p>{user.bio}</p>
             </div>
         </div>
+        {id === userAuth._id && (
+            <>
+                <div className="new-photo" ref={newPhotoForm}>
+                    <h3>Compartilhe suas fotos!</h3>
+                    <form onSubmit={submitHandle}>
+                        <label >
+                            <span>Titulo para a foto:</span>
+                            <input type="text" placeholder='Insira um titulo:' />
+                        </label>
+                        <label>
+                            <span>Imagem:</span>
+                            <input type="file" />
+                        </label>
+                        <input type="submit" value="Postar" />
+                    </form>
+
+                </div>
+            </>
+        )}
     </div>
 }
 
