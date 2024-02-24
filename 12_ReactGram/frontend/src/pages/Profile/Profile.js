@@ -15,10 +15,8 @@ import { useParams } from 'react-router-dom'
 //Redux
 import { getUserDetails } from '../../slices/userSlice'
 
-
 const Profile = () => {
     const { id } = useParams()
-
     const dispatch = useDispatch()
     const { user, loading } = useSelector((state) => state.user)
     const { user: authUser } = useSelector((state) => state.auth)

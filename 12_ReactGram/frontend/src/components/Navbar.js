@@ -27,13 +27,11 @@ const Navbar = () => {
     const { user } = useSelector((state) => state.auth);
 
     const navigate = useNavigate()
-
     const dispatch = useDispatch()
 
     const handleLogout = () => {
         dispatch(logout())
         dispatch(reset())
-
         navigate('/login')
     }
 

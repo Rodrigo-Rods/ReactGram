@@ -21,7 +21,6 @@ import Profile from './pages/Profile/Profile';
 function App() {
   const { auth, loading } = useAuth()
 
-
   if (loading) {
     console.log("Loading:", loading)
     return <p className='loading-page'>Carregando...</p>

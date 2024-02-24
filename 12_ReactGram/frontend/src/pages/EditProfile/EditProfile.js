@@ -73,13 +73,11 @@ const EditProfile = () => {
     const handleFile = (e) => {
         // Preview
         const image = e.target.files[0];
-
         setPreviewImage(image)
 
         //Update State
         setProfileImage(image)
-    }
-
+    };
 
     return <div id='edit-profile'>
         <h2>Edite seu perfil</h2>
