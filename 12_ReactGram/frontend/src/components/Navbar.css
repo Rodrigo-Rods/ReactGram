@@ -8,24 +8,24 @@
     padding: .1em 1em;
 }
 
-#search-form{
+#search-form {
     position: relative;
     width: 20%;
 }
 
 #search-form svg{
-    position: absolute;
-    font-size: .9em;
     top: 2px;
     left: 9px;
+    font-size: .9em;
+    position: absolute;
 }
 
 #search-form input{
-padding-left: 2.5em;
-border: none;
-border-radius: 5px;
-width: 100%;
-margin: 0;
+    margin: 0;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding-left: 2.5em;
 }
 
 #nav-links{
@@ -42,12 +42,11 @@ margin: 0;
 #nav-links ul{
     display: flex;
     list-style: none;
-    display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-#nav-links span {
+#nav-links span{
     cursor: pointer;
 }
 
@@ -56,8 +55,8 @@ margin: 0;
 }
 
 #nav-logo {
-    height: 35px;
-    width: 35px;
     border-radius: 5px;
     margin-right: .5em;
+    height: 35px;
+    width: 35px;
 }
