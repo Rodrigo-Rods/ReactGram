@@ -8,6 +8,7 @@ const publishPhoto = async (data, token) => {
         const res = await fetch(api + '/photos', config)
             .then((res) => res.json())
             .catch((err) => err)
+
         return res;
     } catch (error) {
         console.log('Erro:', error)

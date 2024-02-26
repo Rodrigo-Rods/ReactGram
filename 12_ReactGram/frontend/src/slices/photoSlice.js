@@ -16,16 +16,18 @@ const initialState = {
 export const publishPhoto = createAsyncThunk(
     "photo/publish",
     async (photo, thunkAPI) => {
+
         const token = thunkAPI.getState().auth.user.token;
+
         const data = await photoService.publishPhoto(photo, token);
 
         //Checar se houve erro
-        if (data.error) {
+        if (data.errors) {
             return thunkAPI.rejectWithValue(data.errors[0]);
         }
         return data;
     }
-)
+);
 
 export const photoSlice = createSlice({
     name: 'photo',
