@@ -33,3 +33,40 @@
     cursor: pointer;
     opacity: 0.9;
   }
+
+  .new-photo {
+  padding: 1em;
+  border-bottom: 1px solid #363636;
+  }
+
+  .photo-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .photo {
+    width: 32%;
+    margin: 0.3%;
+  }
+  .photo img {
+    width: 100%;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .action svg {
+    cursor: pointer;
+  }
+
+  .edit-photo {
+    margin-bottom: 1em;
+  }
+
+  .edit-photo img {
+    width: 100%;
+    margin-bottom: 1em;
+  }
