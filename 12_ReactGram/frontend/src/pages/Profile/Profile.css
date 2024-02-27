@@ -1,8 +1,9 @@
 
 
   #profile {
-        width: 60%;
+    width: 60%;
     margin: 0 auto;
+    background-color: rgba(1, 10, 0, 0.75);
   }
 
   .profile-header {
@@ -26,19 +27,28 @@
   }
 
   .new-photo {
-  padding: 1em;
-  border-bottom: 1px solid #363636;
+    padding: 1em;
+    border-bottom: 1px solid #363636;
   }
 
-  .photo-container {
+  /* photos não photo */
+  .photos-container {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
+  }
+  .user-photos {
+    width: 100%;
+    margin: 1em 0;
+  }
+
+  /* Fotos publicadas: */
+  .user-photos h2 { 
+    margin-left: .5em;
   }
 
   .photo {
-    width: 32%;
+    width: 30%;
     margin: 0.3%;
   }
   .photo img {
@@ -63,3 +73,4 @@
     width: 100%;
     margin-bottom: 1em;
   }
+  
