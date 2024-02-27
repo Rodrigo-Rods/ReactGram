@@ -65,8 +65,8 @@ export const updatePhoto = createAsyncThunk(
     async (photoData, thunkAPI) => {
         const token = thunkAPI.getState().auth.user.token;
         const data = await photoService.updatePhoto(
+            photoData.id, // Deve ser passado antes de { title: photoData.title} para que o id seja o primeiro parâmetro da função updatePhoto no photoService.js 
             { title: photoData.title },
-            photoData.id,
             token
         );
 

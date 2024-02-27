@@ -3,7 +3,7 @@
   #profile {
     width: 60%;
     margin: 0 auto;
-    background-color: rgba(1, 10, 0, 0.75);
+    background-color: var(--color01);
   }
 
   .profile-header {
@@ -28,7 +28,7 @@
 
   .new-photo {
     padding: 1em;
-    border-bottom: 1px solid #363636;
+    border-bottom: 1px solid var(--color01);    
   }
 
   /* photos não photo */
@@ -67,6 +67,8 @@
 
   .edit-photo {
     margin-bottom: 1em;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .edit-photo img {
