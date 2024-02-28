@@ -14,23 +14,23 @@ import { useParams } from 'react-router-dom'
 //Redux
 import { getUserDetails } from '../../slices/userSlice'
 import {
+    getUserPhotos,
     publishPhoto,
     resetMessage,
-    getUserPhotos,
     deletePhoto,
     updatePhoto,
-} from '../../slices/photoSlice'
+} from '../../slices/photoSlice';
 
 const Profile = () => {
-    const { id } = useParams()
-    const dispatch = useDispatch()
-    const { user, loading } = useSelector((state) => state.user)
-    const { user: userAuth } = useSelector((state) => state.auth)
+    const { id } = useParams();
+    const dispatch = useDispatch();
+    const { user, loading } = useSelector((state) => state.user);
+    const { user: userAuth } = useSelector((state) => state.auth);
     const {
         photos,
         loading: loadingPhoto,
+        error: errorPhoto,
         message: messagePhoto,
-        error: errorPhoto
     } = useSelector((state) => state.photo);
 
     //State de inclusão
@@ -49,14 +49,9 @@ const Profile = () => {
     //Carregar dados usuário
     useEffect(() => {
         dispatch(getUserDetails(id));
-        dispatch(getUserPhotos(id))
+        dispatch(getUserPhotos(id));
     }, [dispatch, id]);
 
-    const handleFile = (e) => {
-        const image = e.target.files[0];
-
-        setImage(image)
-    };
 
     //Resetar mensagens
     const resetComponentMessage = () => {
@@ -89,6 +84,12 @@ const Profile = () => {
         resetComponentMessage();
     };
 
+    const handleFile = (e) => {
+        const image = e.target.files[0];
+
+        setImage(image)
+    };
+
     //Deletar foto
     const handleDelete = (id) => {
         dispatch(deletePhoto(id));
@@ -107,9 +108,9 @@ const Profile = () => {
 
         const photoData = {
             title: editTitle,
-            id: editId
-        }
-        dispatch(updatePhoto(photoData))
+            id: editId,
+        };
+        dispatch(updatePhoto(photoData));
 
         resetComponentMessage();
     };
@@ -132,7 +133,7 @@ const Profile = () => {
 
     //Loading
     if (loading) {
-        return <p>Carregando...</p>
+        return <p>Carregando...</p>;
     }
 
     return <div id='profile'>
@@ -199,14 +200,22 @@ const Profile = () => {
                             />
                         )}
                         {id === userAuth._id ? (
+
                             <div className="actions">
-                                <Link to={`photos/${photos._id}`}>
+
+                                <Link to={`/photos/${photo._id}`}>
+
+
                                     <BsFillEyeFill />
                                 </Link>
                                 <BsPencilFill onClick={() => handleEdit(photo)} />
                                 <BsXLg onClick={() => handleDelete(photo._id)} />
                             </div>
-                        ) : (<Link className="btn" to={`photos/${photos._id}`}>Ver</Link>)}
+                        ) : (
+                            <Link className="btn" to={`/photos/${photo._id}`}>
+                                Ver
+                            </Link>
+                        )}
                     </div>
                 ))}
                 {photos.length === 0 && <p>Nenhuma foto publicada ainda...</p>}

@@ -5,7 +5,7 @@ const initialState = {
     photos: [],
     photo: {},
     error: false,
-    sucess: false,
+    success: false,
     loading: false,
     message: null
 };
@@ -33,13 +33,10 @@ export const publishPhoto = createAsyncThunk(
 export const getUserPhotos = createAsyncThunk(
     "photo/userphotos",
     async (id, thunkAPI) => {
-
         const token = thunkAPI.getState().auth.user.token;
-
         const data = await photoService.getUserPhotos(id, token);
 
         return data;
-
     }
 );
 
@@ -65,8 +62,8 @@ export const updatePhoto = createAsyncThunk(
     async (photoData, thunkAPI) => {
         const token = thunkAPI.getState().auth.user.token;
         const data = await photoService.updatePhoto(
-            photoData.id, // Deve ser passado antes de { title: photoData.title} para que o id seja o primeiro parâmetro da função updatePhoto no photoService.js 
             { title: photoData.title },
+            photoData.id, // Deve ser passado antes de { title: photoData.title} para que o id seja o primeiro parâmetro da função updatePhoto no photoService.js 
             token
         );
 
@@ -96,10 +93,10 @@ export const photoSlice = createSlice({
             })
             .addCase(publishPhoto.fulfilled, (state, action) => {
                 state.loading = false;
-                state.sucess = true;
+                state.success = true;
                 state.error = null;
                 state.photo = action.payload;
-                state.photos.unshift(state.photo)
+                state.photos.unshift(state.photo);
                 state.message = "Foto publicada com sucesso!";
             })
             .addCase(publishPhoto.rejected, (state, action) => {
@@ -126,7 +123,7 @@ export const photoSlice = createSlice({
                 state.sucess = true;
                 state.error = null;
                 state.photos = state.photos.filter((photo) => {
-                    return photo._id !== action.payload._id;
+                    return photo._id !== action.payload.id;
                 });
                 state.message = action.payload.message;
             })

@@ -11,7 +11,7 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 1em;
-    border-bottom: 1px solid var(--color01);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   }
 
   .profile-header img {
@@ -28,7 +28,7 @@
 
   .new-photo {
     padding: 1em;
-    border-bottom: 1px solid var(--color01);    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
   }
 
   /* photos não photo */

@@ -9,6 +9,7 @@ const insertPhoto = async (req, res) => {
     const image = req.file.filename;
     const reqUser = req.user;
     const user = await User.findOne(reqUser._id);
+    console.log(user._id);
 
     // Criar a foto
     const newPhoto = await Photo.create({
@@ -89,7 +90,7 @@ const getUserPhotos = async (req, res) => {
 const getPhotoById = async (req, res) => {
     const { id } = req.params;
 
-    const photo = await Photo.findById(new mongoose.Types.ObjectId(id));
+    const photo = await Photo.findById(new mongoose.Types.ObjectId(id)); // Era _id antes
 
     // Verificar se a foto existe
     if (!photo) {
@@ -131,6 +132,7 @@ const updatePhoto = async (req, res) => {
     if (title) {
         photo.title = title;
     }
+
     await photo.save();
     res.status(200).json({ photo, message: "Foto atualizada com sucesso" });
 }

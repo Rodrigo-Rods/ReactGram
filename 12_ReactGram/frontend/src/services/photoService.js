@@ -44,9 +44,7 @@ const deletePhoto = async (id, token) => {
     }
 };
 
-
 // Update uma foto
-
 const updatePhoto = async (id, data, token) => {
     const config = requestConfig("PUT", data, token)
     try {
@@ -59,7 +57,6 @@ const updatePhoto = async (id, data, token) => {
         console.log('Erro:', error)
     }
 };
-
 
 //Exportar funções
 const photoService = {
