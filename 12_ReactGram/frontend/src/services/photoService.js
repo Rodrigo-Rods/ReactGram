@@ -71,7 +71,23 @@ const getPhoto = async (id, token) => {
     } catch (error) {
         console.log('Erro getPhoto:', error)
     }
-}
+};
+
+// Likes
+const like = async (id, token) => {
+    const config = requestConfig("PUT", null, token)
+
+    try {
+        const res = await fetch(api + '/photos/like/' + id, config)
+            .then((res) => res.json())
+            .catch((err) => err);
+
+        return res;
+    } catch (error) {
+        console.log('Erro like:', error)
+    }
+};
+
 
 //Exportar funções
 const photoService = {
@@ -80,6 +96,7 @@ const photoService = {
     deletePhoto,
     updatePhoto,
     getPhoto,
+    like,
 };
 
 export default photoService
