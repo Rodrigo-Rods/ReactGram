@@ -1,0 +1,20 @@
+.photo-item img {
+    width: 100%;
+
+}
+
+#home .photo-item h2 {
+    margin-bottom: 2em;
+}
+
+.photo-author {
+    text-align: left;
+}
+
+.photo-author a {
+    font-weight: bold;
+}
+
+.photo-author a:hover {
+    color: rgba(245, 245, 245, 0.75);
+}
