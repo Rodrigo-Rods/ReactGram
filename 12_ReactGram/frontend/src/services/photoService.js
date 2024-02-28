@@ -58,12 +58,28 @@ const updatePhoto = async (id, data, token) => {
     }
 };
 
+//GET foto por id
+const getPhoto = async (id, token) => {
+    const config = requestConfig("GET", null, token)
+
+    try {
+        const res = await fetch(api + '/photos/' + id, config)
+            .then((res) => res.json())
+            .catch((err) => err);
+
+        return res;
+    } catch (error) {
+        console.log('Erro getPhoto:', error)
+    }
+}
+
 //Exportar funções
 const photoService = {
     publishPhoto,
     getUserPhotos,
     deletePhoto,
     updatePhoto,
+    getPhoto,
 };
 
 export default photoService
