@@ -103,6 +103,21 @@ const comment = async (data, id, token) => {
     }
 };
 
+//Home toda as fotos
+const getPhotos = async () => {
+    const config = requestConfig("GET")
+    try {
+        const res = await fetch(api + '/photos', config)
+            .then((res) => res.json())
+            .catch((err) => err);
+
+        return res;
+    } catch (error) {
+        console.log('Erro getPhotos Home:', error)
+    }
+}
+
+
 //Exportar funções
 const photoService = {
     publishPhoto,
@@ -112,6 +127,7 @@ const photoService = {
     getPhoto,
     like,
     comment,
+    getPhotos,
 };
 
 export default photoService
