@@ -4,6 +4,8 @@
     width: 60%;
     margin: 0 auto;
     background-color: var(--color02);
+    border-radius: 20px;
+    margin-top: 1em;
   }
 
   .profile-header {

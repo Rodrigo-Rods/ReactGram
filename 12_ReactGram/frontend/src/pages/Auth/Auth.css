@@ -6,7 +6,15 @@
     max-width: 33%;
     margin: 2em auto;
     box-shadow: 2px 2px 4px 1px #00000075;
+    border-radius: 20px;
+}
+
+#login input,
+#register input {
+    padding: 0.5em;
+    margin-bottom: 1em;
     border-radius: 5px;
+    border: 1px solid #363636;
 }
 
 #login h2,
