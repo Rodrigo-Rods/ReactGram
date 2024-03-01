@@ -115,7 +115,25 @@ const getPhotos = async (token) => {
     } catch (error) {
         console.log('Erro getPhotos Home:', error)
     }
+};
+
+//Search by title
+const searchPhotos = async (query, token) => {
+
+    const config = requestConfig("GET", null, token)
+
+    try {
+        const res = await fetch(api + "/photos/search?q=" + query, config)
+            .then((res) => res.json())
+            .catch((err) => err)
+
+        return res
+    } catch (error) {
+        console.log("SearchPhotos", error)
+    }
+
 }
+
 
 
 //Exportar funções
@@ -128,6 +146,7 @@ const photoService = {
     like,
     comment,
     getPhotos,
+    searchPhotos,
 };
 
 export default photoService
