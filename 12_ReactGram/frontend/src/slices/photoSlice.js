@@ -120,11 +120,14 @@ export const comment = createAsyncThunk("photo/comment", async (commentData, thu
 });
 
 //Slice home
-export const getPhotos = createAsyncThunk("photo/getAll", async () => {
-    const data = await photoService.getPhotos();
+export const getPhotos = createAsyncThunk(
+    "photo/getAll",
+    async (_, thunkAPI) => { // O _ é interpretado como um parâmetro que não será utilizado/dispensável
+        const token = thunkAPI.getState().auth.user.token;
+        const data = await photoService.getPhotos(token);
 
-    return data;
-})
+        return data;
+    })
 
 //Slice
 export const photoSlice = createSlice({

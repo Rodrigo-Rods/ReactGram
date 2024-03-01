@@ -1,0 +1,29 @@
+#home {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 2em;
+    background-color: var(--color03);
+    padding-right: 3em;
+    padding-left: 3em;
+}
+
+#home .btn{
+    display: block;
+    max-width: 80px;
+    text-align: center;
+    margin-bottom: 2em;
+    margin-top: 0.5em;
+}
+
+#home .btn:hover {
+    cursor: pointer;
+    opacity: 1.0;
+}
+
+.no-photos {
+    text-align: center;
+}
+
+.no-photos a {
+    color: red;
+}
