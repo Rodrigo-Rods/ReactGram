@@ -68,6 +68,7 @@ const Photo = () => {
     return (
         <div id="photo">
             <PhotoItem photo={photo} />
+            {/* Aqui onde pode ficar a descrição da foto */}
             <LikeContainer photo={photo} user={user} handleLike={handleLike} />
             <div className="message-container">
                 {error && <Message msg={error} type="error" />}

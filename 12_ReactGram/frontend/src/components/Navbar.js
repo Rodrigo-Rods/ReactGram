@@ -7,10 +7,7 @@ import {
     BsHouseDoorFill,
     BsFillPersonFill,
     BsFillCameraFill,
-    BsExclude,
-    BsX,
-    BsLightbulbOff,
-    BsExplicit
+    BsX
 } from 'react-icons/bs';
 
 // Hooks
@@ -47,7 +44,7 @@ const Navbar = () => {
 
     return <nav id="nav">
         <div id="nav-links">
-            <img src="/favicon.jpeg" id='nav-logo' />
+            <img src="/favicon.jpeg" id='nav-logo' alt='Logo' />
             <Link to="/"> ForestGram</Link>
         </div>
         <form id="search-form" onSubmit={handleSearch}>
